@@ -18,8 +18,8 @@
 
 $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="de">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
@@ -29,32 +29,44 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+//		echo $this->Html->css('cake.generic');
+		echo $this->Html->css(['//netdna.bootstrapcdn.com/bootswatch/2.1.1/united/bootstrap.min.css',
+                                '//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css']);
 
-		echo $this->fetch('meta');
+        echo  $this->Html->script('//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js');
+
+
+        echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+	<div class="container">
+		<div class="page-header">
+			<h1><?php echo $veryWellNamed; ?></h1>
 		</div>
-		<div id="content">
+        <div class="navbar">
+
+            <div class="navbar-inner">
+                <a href="/" class="brand">Bakery</a>
+                <ul class="nav">
+
+                </ul>
+            </div>
+        </div>
+		<div role="content">
 
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
+		<footer>
+            <br>
+            <div class="well">
+			    Yes!
+            </div>
+		</footer>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 </body>

@@ -11,10 +11,13 @@
  * You can view an online copy here:
  * @link http://creativecommons.org/licenses/by-sa/3.0/de/deed.en
  */
+App::uses('AppController', 'Controller');
+
 class HerokuController extends AppController {
 
-    public function indexAction() {
+    public function index() {
         //...
+
     }
 
 }
